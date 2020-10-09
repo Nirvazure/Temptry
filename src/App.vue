@@ -2,7 +2,7 @@
   <v-app>
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
+      <router-link to="/ceremony">Ceremony</router-link> |
       <router-link to="/place">Place</router-link> |
       <router-link to="/bank">Bank</router-link> |
     </div>

@@ -24,9 +24,11 @@
       </template>
       <template v-slot:[`item.score`]="{ item }">
         <v-chip label color="white">
-          <v-avatar color="orange" left>{{ item.level }}</v-avatar>
-          <h3>{{ item.score }}</h3></v-chip
-        >
+          <v-avatar color="orange" left>
+            <h4>{{ item.level }}</h4>
+          </v-avatar>
+          <h3>{{ item.score }}</h3>
+        </v-chip>
       </template>
       <template v-slot:[`item.master`]="{ item }">
         <v-avatar left size="30"

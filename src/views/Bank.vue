@@ -5,13 +5,6 @@
       :headers="headers"
       :items-per-page="5"
       :items="subs"
-      :footer-props="{
-        showFirstLastPage: true,
-        firstIcon: 'mdi-arrow-collapse-left',
-        lastIcon: 'mdi-arrow-collapse-right',
-        prevIcon: 'mdi-minus',
-        nextIcon: 'mdi-plus',
-      }"
       @click:row="(e, item) => dosth(e, item)"
     >
       <template v-slot:[`item.name`]="{ item }">
@@ -30,9 +23,9 @@
         </v-list-item>
       </template>
       <template v-slot:[`item.level`]="{ item }">
-        <v-chip dark label>
-          <v-avatar class="indigo" left>{{ item.level }}</v-avatar
-          >{{ item.score }}</v-chip
+        <v-chip label color="white">
+          <v-avatar color="orange" left>{{ item.level }}</v-avatar>
+          <h3>{{ item.score }}</h3></v-chip
         >
       </template>
       <template v-slot:[`item.master`]="{ item }">
@@ -41,11 +34,13 @@
         ></v-avatar>
         {{ item.master }}
       </template>
-      <template v-slot:[`item.score`]="{ item }">
-        <h3>{{ item.score }}</h3>
-      </template>
-      <template v-slot:[`item.action`]>
-        <v-btn primary @click="dosth">点击主页</v-btn>
+      <template v-slot:[`item.status`]="{ item }">
+        <v-chip
+          dark
+          label
+          :color="item.status == 'Serving' ? 'orange' : 'indigo'"
+          >{{ item.status }}</v-chip
+        >
       </template>
     </v-data-table>
   </v-container>
@@ -66,7 +61,6 @@ export default {
       { text: "Master", value: "master" },
       { text: "status", value: "status" },
       { text: "Score", value: "score" },
-      { text: "Action", value: "action" },
     ],
     subs: slaves,
   }),

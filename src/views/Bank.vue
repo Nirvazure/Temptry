@@ -13,20 +13,47 @@
         nextIcon: 'mdi-plus',
       }"
     >
+      <template v-slot:[`item.name`]="{ item }">
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-img :src="item.masterAvatar"></v-img>
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title class="fontStyle">{{
+              item.name
+            }}</v-list-item-title>
+            <v-list-item-subtitle class="fontStyle">{{
+              item.master
+            }}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
       <template v-slot:[`item.level`]="{ item }">
-        <v-chip>{{ item.level }}</v-chip>
+        <v-chip dark label>
+          <v-avatar class="indigo" left>{{ item.level }}</v-avatar
+          >{{ item.score }}</v-chip
+        >
       </template>
       <template v-slot:[`item.master`]="{ item }">
-        <v-chip color="orange" dark>
-          <v-avatar left><v-img :src="item.masterAvatar"></v-img></v-avatar>
-          {{ item.master }}
-        </v-chip>
+        <!-- <v-chip> -->
+        <v-avatar left size="30"
+          ><v-img :src="item.masterAvatar"></v-img
+        ></v-avatar>
+        {{ item.master }}
+        <!-- </v-chip> -->
+      </template>
+      <template v-slot:[`item.score`]="{ item }">
+        <h3>{{ item.score }}</h3>
+      </template>
+      <template v-slot:[`item.action`]>
+        <v-btn text primary>点击主页</v-btn>
       </template>
     </v-data-table>
   </v-container>
 </template>
 
 <script>
+import { slaves } from "@/api/slave";
 export default {
   data: () => ({
     headers: [
@@ -38,100 +65,17 @@ export default {
       },
       { text: "Level", value: "level" },
       { text: "Master", value: "master" },
-      { text: "MasterAvatar", value: "masterAvatar" },
+      { text: "status", value: "status" },
       { text: "Score", value: "score" },
-      { text: "Iron (%)", value: "iron" },
+      { text: "Action", value: "action" },
     ],
-    subs: [
-      {
-        name: "Frozen Yogurt",
-        level: "A",
-        master: "NingwangDom",
-        masterAvatar: require("@/assets/master/1.jpg"),
-        fat: 6.0,
-        score: 84,
-        protein: 4.0,
-        iron: "1%",
-      },
-      {
-        name: "Ice cream sandwich",
-        calories: 237,
-        level: "B",
-        master: "Beishan",
-        masterAvatar: require("@/assets/master/2.jpg"),
-        fat: 9.0,
-        carbs: 37,
-        protein: 4.3,
-        iron: "1%",
-      },
-      {
-        name: "Eclair",
-        calories: 262,
-        fat: 16.0,
-        carbs: 23,
-        protein: 6.0,
-        iron: "7%",
-      },
-      {
-        name: "Cupcake",
-        calories: 305,
-        fat: 3.7,
-        carbs: 67,
-        protein: 4.3,
-        iron: "8%",
-      },
-      {
-        name: "Gingerbread",
-        calories: 356,
-        fat: 16.0,
-        carbs: 49,
-        protein: 3.9,
-        iron: "16%",
-      },
-      {
-        name: "Jelly bean",
-        calories: 375,
-        fat: 0.0,
-        carbs: 94,
-        protein: 0.0,
-        iron: "0%",
-      },
-      {
-        name: "Lollipop",
-        calories: 392,
-        fat: 0.2,
-        carbs: 98,
-        protein: 0,
-        iron: "2%",
-      },
-      {
-        name: "Honeycomb",
-        calories: 408,
-        fat: 3.2,
-        carbs: 87,
-        protein: 6.5,
-        iron: "45%",
-      },
-      {
-        name: "Donut",
-        calories: 452,
-        fat: 25.0,
-        carbs: 51,
-        protein: 4.9,
-        iron: "22%",
-      },
-      {
-        name: "KitKat",
-        calories: 518,
-        fat: 26.0,
-        carbs: 65,
-        protein: 7,
-        iron: "6%",
-      },
-    ],
+    subs: slaves,
   }),
 };
 </script>
 
-<style>
+<style scoped>
+.fontStyle {
+  font-family: Copperplate, "Consolas", fantasy;
+}
 </style>

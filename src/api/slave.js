@@ -5,20 +5,23 @@ const slaves = [{
     masterAvatar: require("@/assets/master/2.jpg"),
     status: "Serving",
     score: 84,
+    price: 820000
 }, {
-    name: "Frozen Yogurt",
+    name: "Yogurt",
     level: "A",
     master: "Ningwang",
     masterAvatar: require("@/assets/master/1.jpg"),
     status: "Trainning",
-    score: 84,
+    score: 44,
+    price: 40000
 }, {
-    name: "Frozen Yogurt",
+    name: "Frozen",
     level: "A",
-    master: "Ningwang",
+    master: "snake",
     masterAvatar: require("@/assets/master/1.jpg"),
     status: "Trainning",
-    score: 84,
+    score: 64,
+    price: 430000
 }, ];
 
 export {

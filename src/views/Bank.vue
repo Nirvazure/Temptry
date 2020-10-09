@@ -22,7 +22,7 @@
           </v-list-item-content>
         </v-list-item>
       </template>
-      <template v-slot:[`item.level`]="{ item }">
+      <template v-slot:[`item.score`]="{ item }">
         <v-chip label color="white">
           <v-avatar color="orange" left>{{ item.level }}</v-avatar>
           <h3>{{ item.score }}</h3></v-chip
@@ -42,6 +42,9 @@
           >{{ item.status }}</v-chip
         >
       </template>
+      <template v-slot:[`item.price`]="{ item }">
+        <span class="body-1 font-italic">￥{{ item.price }}</span>
+      </template>
     </v-data-table>
   </v-container>
 </template>
@@ -52,15 +55,15 @@ export default {
   data: () => ({
     headers: [
       {
-        text: "Dessert",
+        text: "Name",
         align: "start",
         sortable: false,
         value: "name",
       },
-      { text: "Level", value: "level" },
+      { text: "Score", value: "score" },
       { text: "Master", value: "master" },
       { text: "status", value: "status" },
-      { text: "Score", value: "score" },
+      { text: "Price", value: "price" },
     ],
     subs: slaves,
   }),

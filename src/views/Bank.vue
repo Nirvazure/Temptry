@@ -12,6 +12,7 @@
         prevIcon: 'mdi-minus',
         nextIcon: 'mdi-plus',
       }"
+      @click:row="(e, item) => dosth(e, item)"
     >
       <template v-slot:[`item.name`]="{ item }">
         <v-list-item>
@@ -35,18 +36,16 @@
         >
       </template>
       <template v-slot:[`item.master`]="{ item }">
-        <!-- <v-chip> -->
         <v-avatar left size="30"
           ><v-img :src="item.masterAvatar"></v-img
         ></v-avatar>
         {{ item.master }}
-        <!-- </v-chip> -->
       </template>
       <template v-slot:[`item.score`]="{ item }">
         <h3>{{ item.score }}</h3>
       </template>
       <template v-slot:[`item.action`]>
-        <v-btn text primary>点击主页</v-btn>
+        <v-btn primary @click="dosth">点击主页</v-btn>
       </template>
     </v-data-table>
   </v-container>
@@ -71,6 +70,12 @@ export default {
     ],
     subs: slaves,
   }),
+  methods: {
+    dosth(e, item) {
+      this.$router.push({ name: "master", params: { name: e.name } });
+      console.log(item);
+    },
+  },
 };
 </script>
 

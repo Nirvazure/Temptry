@@ -4,15 +4,18 @@
     <h2>{{ slave.level }}</h2>
     <h2>{{ slave.score }}</h2>
     <h2>{{ slave.master }}</h2>
+    <RaddarChart></RaddarChart>
   </v-container>
 </template>
 
 <script>
 import { slaves } from "@/api/slave";
+import RaddarChart from "@/components/RaddarChart";
 export default {
   data: () => ({
     slave: {},
   }),
+  components: { RaddarChart },
   mounted() {
     this.slave = slaves.filter((item) => {
       return item.name == this.$route.params.name;

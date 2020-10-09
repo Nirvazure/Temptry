@@ -15,9 +15,18 @@
         </v-stepper-step>
       </v-stepper-header>
       <v-stepper-items>
-        <v-stepper-content step="1">choose your plan</v-stepper-content>
-        <v-stepper-content step="2">Confirm your items</v-stepper-content>
-        <v-stepper-content step="3">Admit your Mast</v-stepper-content>
+        <v-stepper-content step="1">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+          <v-btn color="primary" @click="step = 2"> Continue </v-btn>
+        </v-stepper-content>
+        <v-stepper-content step="2">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+          <v-btn color="primary" @click="step = 3"> Continue </v-btn>
+        </v-stepper-content>
+        <v-stepper-content step="3">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+          <v-btn color="primary" @click="step = 1"> Continue </v-btn>
+        </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
   </v-container>

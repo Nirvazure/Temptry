@@ -15,7 +15,16 @@
                 master.description
               }}</v-list-item-subtitle>
             </v-list-item-content>
-            <v-chip class="mt-3" label color="orange" dark small>K7</v-chip>
+            <v-chip
+              v-for="(label, i) in master.labels"
+              :key="i"
+              class="mt-3 mx-1"
+              label
+              :color="label.color"
+              dark
+              small
+              >{{ label.text }}</v-chip
+            >
           </v-card-text>
           <v-card-text>
             <v-avatar size="30">

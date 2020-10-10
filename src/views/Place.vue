@@ -2,7 +2,12 @@
   <v-container>
     <v-row>
       <v-col class="ma-6" v-for="(master, i) in masters" :key="i">
-        <v-card max-width="300" height="350" class="pt-1" :img="master.bgImg">
+        <v-card
+          max-width="300"
+          height="350"
+          class="pt-1 text-center"
+          :img="master.bgImg"
+        >
           <v-card-text class="mt-2">
             <v-avatar size="100">
               <v-img :src="master.avatar"></v-img>

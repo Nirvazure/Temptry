@@ -6,6 +6,7 @@
       <router-link to="/place">Place</router-link> |
       <router-link to="/bank">Bank</router-link> |
       <router-link to="/train">Train</router-link> |
+      <router-link to="/schedule">Schedule</router-link> |
     </div>
     <router-view />
   </v-app>
@@ -16,7 +17,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 

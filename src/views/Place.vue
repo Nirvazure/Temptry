@@ -1,21 +1,19 @@
 <template>
   <v-container>
-    <v-slide-group center-active>
-      <v-slide-item class="ma-6" v-for="(place, i) in places" :key="i">
-        <v-card
-          width="300"
-          height="400"
-          img="https://hbimg.huabanimg.com/9c5bc28b02442cd928af88bb641a20815d318ecb138f-8ULc4y_fw658/format/webp"
-        >
-          <v-card-text class="mt-10">
+    <v-row>
+      <v-col class="ma-6" v-for="(master, i) in masters" :key="i">
+        <v-card max-width="300" height="350" class="pt-1" :img="master.bgImg">
+          <v-card-text class="mt-2">
             <v-avatar size="100">
-              <v-img :src="avatar"></v-img>
+              <v-img :src="master.avatar"></v-img>
             </v-avatar>
             <v-list-item-content>
-              <v-list-item-title class="font-weight-bold title"
-                >M Name</v-list-item-title
-              >
-              <v-list-item-subtitle>Famous in SnakeSoul</v-list-item-subtitle>
+              <v-list-item-title class="font-weight-bold title">{{
+                master.name
+              }}</v-list-item-title>
+              <v-list-item-subtitle>{{
+                master.description
+              }}</v-list-item-subtitle>
             </v-list-item-content>
             <v-chip class="mt-3" label color="orange" dark small>K7</v-chip>
           </v-card-text>
@@ -31,17 +29,17 @@
             </v-avatar>
           </v-card-text>
         </v-card>
-      </v-slide-item>
-    </v-slide-group>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import { places } from "@/api/place";
+import { masters } from "@/api/master";
 export default {
   data: () => ({
     avatar: require("@/assets/master/1.jpg"),
-    places: places,
+    masters: masters,
   }),
 };
 </script>

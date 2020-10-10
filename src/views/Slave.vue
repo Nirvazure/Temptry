@@ -4,7 +4,10 @@
     <h2>{{ slave.level }}</h2>
     <h2>{{ slave.score }}</h2>
     <h2>{{ slave.master }}</h2>
-    <RaddarChart></RaddarChart>
+    <RaddarChart
+      :faceScore="slave.faceScore"
+      :bodyScore="slave.bodyScore"
+    ></RaddarChart>
   </v-container>
 </template>
 

@@ -3,15 +3,15 @@ const places = [{
         description: 'dsadsad'
     },
     {
-        name: 'ChainYu2',
+        name: 'ChiDu',
         description: 'dsadsa2414d'
     },
     {
-        name: 'ChainYu3',
+        name: 'Eden',
         description: 'dsadsa3213d'
     },
     {
-        name: 'ChainYu3',
+        name: 'Yamahito',
         description: 'dsadsa3213d'
     },
 ]

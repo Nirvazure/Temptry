@@ -5,7 +5,9 @@ const slaves = [{
     masterAvatar: require("@/assets/master/2.jpg"),
     status: "Serving",
     score: 84,
-    price: 820000
+    price: 820000,
+    faceScore: 80,
+    bodyScore: 90
 }, {
     name: "Yogurt",
     level: "A",

@@ -23,12 +23,16 @@
         </v-list-item>
       </template>
       <template v-slot:[`item.score`]="{ item }">
-        <v-chip label color="white">
+        <v-chip label color="white" class="d-flex">
           <v-avatar color="orange" left>
-            <h4>{{ item.level }}</h4>
+            <span>{{ item.level }}</span>
           </v-avatar>
-          <h3>{{ item.score }}</h3>
+          <span>{{ item.score }}</span>
         </v-chip>
+        <v-progress-linear
+          class="d-flex"
+          :value="item.score"
+        ></v-progress-linear>
       </template>
       <template v-slot:[`item.master`]="{ item }">
         <v-avatar left size="30"
@@ -71,7 +75,7 @@ export default {
   }),
   methods: {
     dosth(e, item) {
-      this.$router.push({ name: "master", params: { name: e.name } });
+      this.$router.push({ name: "slave", params: { name: e.name } });
       console.log(item);
     },
   },

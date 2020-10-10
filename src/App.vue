@@ -5,6 +5,7 @@
       <router-link to="/ceremony">Ceremony</router-link> |
       <router-link to="/place">Place</router-link> |
       <router-link to="/bank">Bank</router-link> |
+      <router-link to="/train">Train</router-link> |
     </div>
     <router-view />
   </v-app>

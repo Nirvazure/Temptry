@@ -4,8 +4,6 @@
 
 <script>
 import echarts from "echarts";
-require("echarts/theme/macarons"); // echarts theme
-
 const animationDuration = 3000;
 
 export default {
@@ -22,12 +20,32 @@ export default {
       type: String,
       default: "300px",
     },
+    faceScore: {
+      type: Number,
+      default: 0,
+    },
+    bodyScore: {
+      type: Number,
+      default: 0,
+    },
+    SubScore: {
+      type: Number,
+      default: 0,
+    },
+    MScore: {
+      type: Number,
+      default: 0,
+    },
+    SexScore: {
+      type: Number,
+      default: 0,
+    },
+    MentorScore: {
+      type: Number,
+      default: 0,
+    },
   },
-  data() {
-    return {
-      chart: null,
-    };
-  },
+  data: () => ({ chart: null }),
   mounted() {
     this.initChart();
   },
@@ -35,12 +53,10 @@ export default {
   methods: {
     initChart() {
       this.chart = echarts.init(this.$el, "macarons");
-
       this.chart.setOption({
         tooltip: {
           trigger: "axis",
           axisPointer: {
-            // 坐标轴指示器，坐标轴触发有效
             type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
           },
         },
@@ -59,40 +75,28 @@ export default {
             },
           },
           indicator: [
-            { name: "输出", max: 100 },
-            { name: "坦度", max: 100 },
-            { name: "推线", max: 100 },
-            { name: "团战", max: 100 },
-            { name: "支援", max: 100 },
-            { name: "控制", max: 100 },
+            { name: "Face", max: 100 },
+            { name: "Body", max: 100 },
+            { name: "Sub", max: 100 },
+            { name: "M", max: 100 },
+            { name: "Sex", max: 100 },
+            { name: "Mentor", max: 100 },
           ],
-        },
-        legend: {
-          left: "center",
-          bottom: "10",
-          data: ["Nirvazure", "SandM"],
         },
         series: [
           {
             type: "radar",
             symbolSize: 0,
-            areaStyle: {
-              normal: {
-                shadowBlur: 13,
-                shadowColor: "rgba(0,0,0,.2)",
-                shadowOffsetX: 0,
-                shadowOffsetY: 10,
-                opacity: 1,
-              },
-            },
             data: [
               {
-                value: [50, 70, 12, 11, 50, 40],
-                name: "Nirvazure",
-              },
-              {
-                value: [40, 90, 50, 50, 30, 10],
-                name: "SandM",
+                value: [
+                  this.faceScore,
+                  this.bodyScore,
+                  this.SubScore,
+                  this.MScore,
+                  this.SexScore,
+                  this.MentorScore,
+                ],
               },
             ],
             animationDuration: animationDuration,

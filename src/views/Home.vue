@@ -1,12 +1,15 @@
 <template>
-  <div class="home">
-    <h1>This is an home page</h1>
-  </div>
+  <v-container>
+    <Todo></Todo>
+  </v-container>
 </template>
 
 <script>
+import Todo from "@/components/Todo";
 export default {
   data: () => ({}),
-  components: {},
+  components: {
+    Todo,
+  },
 };
 </script>

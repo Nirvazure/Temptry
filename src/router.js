@@ -25,9 +25,14 @@ const routes = [{
     component: () => import('@/views/Bank.vue')
   },
   {
-    path: '/master/:name',
-    name: 'master',
-    component: () => import('@/views/Master.vue')
+    path: '/slave/:name',
+    name: 'slave',
+    component: () => import('@/views/Slave.vue')
+  },
+  {
+    path: '/train',
+    name: 'train',
+    component: () => import('@/views/Train.vue')
   }
 ]
 

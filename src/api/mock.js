@@ -82,19 +82,23 @@ const masters = [{
 
 const places = [{
         name: 'ChainYu',
-        description: 'dsadsad'
+        description: 'dsadsad',
+        avatar: require('@/assets/master/1.jpg'),
     },
     {
         name: 'ChiDu',
-        description: 'dsadsa2414d'
+        description: 'dsadsa2414d',
+        avatar: require('@/assets/master/2.jpg'),
     },
     {
         name: 'Eden',
-        description: 'dsadsa3213d'
+        description: 'dsadsa3213d',
+        avatar: require('@/assets/master/3.jpg'),
     },
     {
         name: 'Yamahito',
-        description: 'dsadsa3213d'
+        description: 'dsadsa3213d',
+        avatar: require('@/assets/master/4.jpg'),
     },
 ]
 

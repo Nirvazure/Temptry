@@ -55,10 +55,10 @@ export default {
         return allNames;
       }, {});
       console.log(countedNames, typeof countedNames);
+      for (let i in countedNames) {
+        console.log(i);
+      }
     },
-
-    // countedNames is:
-    // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
   },
 };
 </script>

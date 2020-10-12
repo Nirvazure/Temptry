@@ -3,7 +3,7 @@
     <v-data-table
       class="elevation-3"
       :headers="headers"
-      :items-per-page="5"
+      :items-per-page="10"
       :items="subs"
       @click:row="(e, item) => dosth(e, item)"
     >

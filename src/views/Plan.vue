@@ -1,9 +1,7 @@
 <template>
   <v-container>
-    <h2>Plan</h2>
-
     <v-row>
-      <v-col>
+      <v-col cols='12' md="2">
         <v-card color="primary" dark>
           <v-card-title>Items</v-card-title>
           <v-card-text>

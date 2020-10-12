@@ -12,7 +12,11 @@ const places = [{
     },
     {
         name: 'Yamahito',
-        description: 'dsadsa3213d'
+        description: '和风日式调教'
+    },    
+    {
+        name: '非凡集市',
+        description: 'DOM的线下聚会，有东西卖，可以买到女奴'
     },
 ]
 

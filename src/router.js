@@ -15,9 +15,9 @@ const routes = [{
     component: () => import('@/views/Ceremony.vue')
   },
   {
-    path: '/place',
-    name: 'Place',
-    component: () => import('@/views/Place.vue')
+    path: '/master',
+    name: 'Master',
+    component: () => import('@/views/Masters.vue')
   },
   {
     path: '/bank',
@@ -43,6 +43,11 @@ const routes = [{
     path: '/plan',
     name: 'plan',
     component: () => import('@/views/Plan.vue')
+  },
+  {
+    path: '/week',
+    name: 'week',
+    component: () => import('@/views/Week.vue')
   }
 ]
 

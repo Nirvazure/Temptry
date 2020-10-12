@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <h2>Pay Analyse</h2>
+    <v-btn @click="showArray">show</v-btn>
     <v-data-table
       :headers="headers"
       :items="payMemos"
@@ -28,6 +29,7 @@ export default {
       { text: "商品", value: "商品" },
     ],
     payMemos: [],
+    h2: "232",
   }),
   mounted() {
     let csv_file = "./wepay_lfr.csv";
@@ -37,6 +39,26 @@ export default {
       console.log(ret);
       this.payMemos = ret;
     });
+  },
+  methods: {
+    showArray() {
+      let a1 = this.payMemos.map((v) => {
+        return v["交易对方"];
+      });
+      console.log(a1);
+      let countedNames = a1.reduce((allNames, name) => {
+        if (name in allNames) {
+          allNames[name]++;
+        } else {
+          allNames[name] = 1;
+        }
+        return allNames;
+      }, {});
+      console.log(countedNames, typeof countedNames);
+    },
+
+    // countedNames is:
+    // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
   },
 };
 </script>

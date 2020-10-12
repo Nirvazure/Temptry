@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { slaves } from "@/api/slave";
+import { slaves } from "@/api/mock";
 export default {
   data: () => ({
     headers: [

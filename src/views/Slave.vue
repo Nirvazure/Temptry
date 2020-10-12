@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { slaves } from "@/api/slave";
+import { slaves } from "@/api/mock";
 import RaddarChart from "@/components/RaddarChart";
 export default {
   data: () => ({

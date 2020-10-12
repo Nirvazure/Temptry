@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { masters } from "@/api/master";
+import { masters } from "@/api/mock";
 export default {
   data: () => ({
     avatar: require("@/assets/master/1.jpg"),

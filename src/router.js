@@ -20,6 +20,11 @@ const routes = [{
     component: () => import('@/views/Place.vue')
   },
   {
+    path: '/place2',
+    name: 'Place2',
+    component: () => import('@/views/Place2.vue')
+  },
+  {
     path: '/bank',
     name: 'Bank',
     component: () => import('@/views/Bank.vue')

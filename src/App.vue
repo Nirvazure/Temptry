@@ -9,6 +9,7 @@
       <router-link to="/train">Train</router-link> |
       <router-link to="/schedule">Schedule</router-link> |
       <router-link to="/plan">Plan</router-link> |
+      <router-link to="/pay">Pay</router-link> |
     </div>
     <router-view />
   </v-app>

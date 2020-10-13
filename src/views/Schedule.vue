@@ -1,26 +1,13 @@
 <template>
   <v-container>
     <h2>Schedule</h2>
-    <v-card>
-      <v-calendar></v-calendar>
-    </v-card>
     <v-row>
       <v-col cols="12" md="3">
         <v-card>
           <v-img
-            height="200px"
+            height="400px"
             src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
           >
-            <v-app-bar flat color="rgba(0, 0, 0, 0)">
-              <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
-              <v-toolbar-title class="title white--text pl-0">
-                Progress
-              </v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn color="white" icon>
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
-            </v-app-bar>
             <v-card-title class="white--text mt-8">
               <v-avatar size="56">
                 <img
@@ -28,12 +15,12 @@
                 />
               </v-avatar>
               <p class="ml-3">John Doe</p>
+              <v-calendar class="mt-3"></v-calendar>
             </v-card-title>
           </v-img>
 
           <v-card-text>
             <div class="font-weight-bold ml-8 mb-2">Today</div>
-
             <v-timeline align-top dense>
               <v-timeline-item
                 v-for="message in messages"

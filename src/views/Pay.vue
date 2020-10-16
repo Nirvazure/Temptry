@@ -1,7 +1,9 @@
 <template>
   <v-container>
     <h2>Pay Analyse</h2>
-    <v-btn @click="showArray">show</v-btn>
+    <v-select :items="payTypes" filled label="Filled style"></v-select>
+    <v-select :items="payTargets" filled label="Filled style"></v-select>
+    <v-btn @click="getPayTypeInfo">show</v-btn>
     <v-data-table
       :headers="headers"
       :items="payMemos"
@@ -29,23 +31,59 @@ export default {
       { text: "商品", value: "商品" },
     ],
     payMemos: [],
-    h2: "232",
+    payTypes: [],
+    payTargets: [],
   }),
   mounted() {
     let csv_file = "./wepay_lfr.csv";
     const d3 = require("d3-dsv");
     axios.get(csv_file).then((res) => {
       let ret = d3.csvParse(res.data);
-      console.log(ret);
       this.payMemos = ret;
+      this.payTypes = this.getSelectItem("支付方式");
+      this.payTargets = this.getSelectItem("交易对方");
     });
+
+    console.log(this.payTypes);
   },
   methods: {
+    getPayTypeInfo() {
+      for (let type of this.payTypes) {
+        // let sum = 0;
+        console.log("type", type);
+        let a = this.payMemos
+          .filter((v) => {
+            return v["支付方式"] === type;
+          })
+          .map((v) => {
+            return Number(v["金额(元)"].replace("¥", ""));
+          });
+        console.log(a);
+      }
+    },
+
+    getSelectItem(param) {
+      return this.payMemos.map((v) => {
+        return v[param];
+      });
+    },
+
+    showArray2() {
+      let TOP10 = this.payMemos.sort((a, b) => {
+        return a["金额(元)"] - b["金额(元)"];
+      });
+      for (let i = 0; i < 10; i++) {
+        console.log(TOP10[i]);
+      }
+    },
+
     showArray() {
       let a1 = this.payMemos.map((v) => {
         return v["交易对方"];
       });
+      console.log("2222");
       console.log(a1);
+
       let countedNames = a1.reduce((allNames, name) => {
         if (name in allNames) {
           allNames[name]++;
@@ -56,7 +94,9 @@ export default {
       }, {});
       console.log(countedNames, typeof countedNames);
       for (let i in countedNames) {
-        console.log(i);
+        if (countedNames[i] > 10) {
+          console.log(i, countedNames[i]);
+        }
       }
     },
   },

@@ -1,19 +1,26 @@
 <template>
   <v-container>
     <h2>Promise Try</h2>
-
-    <v-list height="600px" class="overflow-y-auto overflow-x-hidden">
-      <v-list-item v-for="(item, i) in msgs" :key="i">
-        {{ item }}
-      </v-list-item>
-    </v-list>
-    <v-row class="mt-3">
-      <v-avatar class="mx-5">
-        <v-img src="https://profile.csdnimg.cn/4/6/4/3_weixin_30662849"></v-img>
-      </v-avatar>
-      <v-text-field class="d-flex-inline" label="Regular"></v-text-field>
-      <v-btn class="mx-5" color="primary" @click="add_msg">Start</v-btn>
-    </v-row>
+    <v-card width="700">
+      <v-list height="200px" class="overflow-y-auto overflow-x-hidden">
+        <v-list-item v-for="(item, i) in msgs" :key="i">
+          {{ item }}
+        </v-list-item>
+      </v-list>
+      <v-card-actions>
+        <v-row>
+          <v-col>
+            <v-avatar>
+              <v-img
+                src="https://profile.csdnimg.cn/4/6/4/3_weixin_30662849"
+              ></v-img>
+            </v-avatar>
+            <v-text-field label="Regular"></v-text-field>
+          </v-col>
+          <v-col><v-btn color="primary" @click="add_msg">Start</v-btn></v-col>
+        </v-row>
+      </v-card-actions>
+    </v-card>
   </v-container>
 </template>
 

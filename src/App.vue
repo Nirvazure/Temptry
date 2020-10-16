@@ -1,10 +1,7 @@
 <template>
   <v-app>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/ceremony">Ceremony</router-link> |
       <router-link to="/train">Train</router-link> |
-      <router-link to="/schedule">Schedule</router-link> |
       <router-link to="/plan">Plan</router-link> |
       <router-link to="/pay">Pay</router-link> |
     </div>

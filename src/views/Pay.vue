@@ -1,12 +1,22 @@
 <template>
   <v-container>
     <h2>Pay Analyse</h2>
-    <v-select :items="payTypes" filled label="Filled style"></v-select>
-    <v-select :items="payTargets" filled label="Filled style"></v-select>
+    <v-select
+      v-model="payType"
+      :items="payTypes"
+      filled
+      label="Filled style"
+    ></v-select>
+    <v-select
+      v-model="payTarget"
+      :items="payTargets"
+      filled
+      label="Filled style"
+    ></v-select>
     <v-btn @click="getPayTypeInfo">show</v-btn>
     <v-data-table
       :headers="headers"
-      :items="payMemos"
+      :items="currPayMemos"
       :items-per-page="5"
       class="elevation-1"
     ></v-data-table>
@@ -33,6 +43,8 @@ export default {
     payMemos: [],
     payTypes: [],
     payTargets: [],
+    payType: "",
+    payTarget: "",
   }),
   mounted() {
     let csv_file = "./wepay_lfr.csv";
@@ -45,6 +57,19 @@ export default {
     });
 
     console.log(this.payTypes);
+  },
+  computed: {
+    currPayMemos() {
+      return (
+        this.payMemos
+          // .filter((v) => {
+          //   return v["支付方式"] == this.payType;
+          // })
+          .filter((v) => {
+            return v["交易对方"] == this.payTarget;
+          })
+      );
+    },
   },
   methods: {
     getPayTypeInfo() {

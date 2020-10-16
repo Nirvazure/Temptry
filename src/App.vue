@@ -2,7 +2,6 @@
   <v-app>
     <div id="nav">
       <router-link to="/train">Train</router-link> |
-      <router-link to="/plan">Plan</router-link> |
       <router-link to="/pay">Pay</router-link> |
       <router-link to="/tasks">Tasks</router-link> |
     </div>

@@ -16,7 +16,9 @@
               <v-icon v-text="v.icon"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title> {{ v.text }}</v-list-item-title>
+              <v-list-item-title>
+                {{ v.text }}<flag class="ml-2" iso="it"
+              /></v-list-item-title>
             </v-list-item-content>
             <v-list-item-action>
               <v-chip label color="#63c2de" small light>New</v-chip>

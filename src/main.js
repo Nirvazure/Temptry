@@ -6,8 +6,9 @@ import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 
-import VCharts from 'v-charts'
-Vue.use(VCharts)
+
+import FlagIcon from 'vue-flag-icon'
+Vue.use(FlagIcon);
 
 Vue.config.productionTip = false
 

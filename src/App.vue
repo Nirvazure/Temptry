@@ -1,17 +1,26 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="mine">
+    <v-navigation-drawer app v-model="mine" dark>
+      <v-app-bar light> YQYMONs </v-app-bar>
       <v-list>
         <v-list-item-group>
+          <v-subheader>
+            <h3>Theme</h3>
+          </v-subheader>
           <v-list-item
             v-for="(v, i) in menus"
             :key="i"
-            @click="$router.push(v)"
+            @click="$router.push(v.text)"
           >
             <v-list-item-icon>
               <v-icon v-text="v.icon"></v-icon>
             </v-list-item-icon>
-            {{ v.text }}
+            <v-list-item-content>
+              <v-list-item-title> {{ v.text }}</v-list-item-title>
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-chip label color="#63c2de" small light>New</v-chip>
+            </v-list-item-action>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -57,6 +66,7 @@
 export default {
   data: () => ({
     mine: true,
+
     menus: [
       { text: "Dashboard", icon: "mdi-video" },
       { text: "train", icon: "mdi-wechat" },

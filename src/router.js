@@ -6,6 +6,15 @@ Vue.use(VueRouter);
 const routes = [
 
   {
+    path: '/',
+    redirect: '/dashboard',
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('@/views/Dashboard.vue')
+  },
+  {
     path: '/pay',
     name: 'Pay',
     component: () => import('@/views/Pay.vue')
@@ -15,13 +24,11 @@ const routes = [
     path: '/train',
     name: 'train',
     component: () => import('@/views/Train.vue')
-  },
-  {
+  }, {
     path: '/tasks',
     name: 'tasks',
     component: () => import('@/views/Tasks.vue')
-  },
-  {
+  }, {
     path: '/plan',
     name: 'plan',
     // component: () => import('@/components/SW.vue')

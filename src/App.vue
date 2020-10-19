@@ -26,6 +26,23 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+      <v-list-item-group>
+        <v-subheader>
+          <h3>People</h3>
+        </v-subheader>
+      </v-list-item-group>
+      <v-list-item-group>
+        <v-subheader>
+          <h3>Tags</h3>
+        </v-subheader>
+        <div>
+          <v-chip class="ma-2">sda</v-chip>
+          <v-chip class="ma-2">sda</v-chip>
+          <v-chip class="ma-2">sda</v-chip>
+          <v-chip class="ma-2">sda</v-chip>
+          <v-chip class="ma-2">sda</v-chip>
+        </div>
+      </v-list-item-group>
       <template v-slot:append>
         <div class="pa-2">
           <v-btn block> Logout </v-btn>

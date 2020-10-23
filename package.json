@@ -18,6 +18,7 @@
     "roboto-fontface": "*",
     "v-charts": "^1.19.0",
     "vue": "^2.6.11",
+    "vue-echarts": "^5.0.0-beta.0",
     "vue-flag-icon": "^1.0.6",
     "vue-router": "^3.2.0",
     "vuedraggable": "^2.24.1",

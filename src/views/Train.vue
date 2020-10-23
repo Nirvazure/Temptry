@@ -1,47 +1,42 @@
 <template>
-  <v-container>
-    <v-card width="700">
-      <v-list height="200px" class="overflow-y-auto overflow-x-hidden">
-        <v-list-item v-for="(item, i) in msgs" :key="i">
-          {{ item }}
-        </v-list-item>
-      </v-list>
-      <v-card-actions>
+  <v-container class="pa-12">
+    <v-row>
+      <v-col cols="12" md="2" class="d-flex justify-space-around">
+        <v-img :src="img" :aspect-ratio="3 / 4" width="100%"></v-img>
+      </v-col>
+      <v-col cols="12" md="3" class="ml-10">
         <v-row>
-          <v-col>
-            <v-avatar>
-              <v-img
-                src="https://profile.csdnimg.cn/4/6/4/3_weixin_30662849"
-              ></v-img>
-            </v-avatar>
-            <v-text-field label="Regular"></v-text-field>
-          </v-col>
-          <v-col><v-btn color="primary" @click="add_msg">Start</v-btn></v-col>
+          <p class="display-1 mt-3">Celine Kutch</p>
         </v-row>
-      </v-card-actions>
-    </v-card>
+        <v-row>
+          <v-col cols="12" md="4">
+            <p class="font-weight-bold">Item1</p>
+            <p class="font-weight-bold">Item1</p>
+            <p class="font-weight-bold">Item1</p>
+            <p class="font-weight-bold">Item1</p>
+          </v-col>
+          <v-col cols="12" md="7">
+            <p>Item1</p>
+            <p>Item1</p>
+            <p>Item1</p>
+            <p>Item1</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-btn outlined color="primary" class="mx-1">Order</v-btn>
+          <v-btn outlined color="success" class="mx-1">Order</v-btn>
+          <v-btn outlined color="warning" class="mx-1">Order</v-btn>
+        </v-row>
+      </v-col>
+      <v-col cols="12" md="6"></v-col>
+    </v-row>
   </v-container>
 </template>
 <script>
-const promise = new Promise((resolve, reject) => {
-  setTimeout(resolve, 3000, "done");
-  reject;
-});
-
 export default {
   data: () => ({
-    msgs: [],
+    img: require("@/assets/1.jpg"),
   }),
-  mounted() {
-    promise.then((v) => {
-      console.log(v);
-    });
-  },
-  methods: {
-    add_msg() {
-      this.msgs.push("222");
-    },
-  },
 };
 </script>
 

@@ -73,7 +73,7 @@
 <script>
 export default {
   data: () => ({
-    mine: true,
+    mine: false,
 
     chips: [
       { text: "top", num: 3 },

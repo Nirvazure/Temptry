@@ -1,74 +1,66 @@
 <template>
   <v-container>
-    <v-row dense>
-      <v-col cols="12">
-        <v-card color="#385F73" dark>
-          <v-card-title class="headline"> Unlimited music now </v-card-title>
-
-          <v-card-subtitle
-            >Listen to your favorite artists and albums whenever and wherever,
-            online and offline.</v-card-subtitle
+    <v-card class="mx-auto" flat>
+      <v-card-title>
+        <h2 class="display-1">
+          Toothbrush<v-chip color="orange" class="ma-3" dark>履行中</v-chip>
+        </h2>
+      </v-card-title>
+      <v-card-text>
+        Our company takes pride in making handmade brushes. Our toothbrushes are
+        available in 4 different bristel types, from extra soft to hard.
+      </v-card-text>
+      <div class="d-flex flex-no-wrap justify-space-between">
+        <div>
+          <v-chip-group
+            v-model="selection"
+            active-class="deep-purple--text text--accent-4"
+            mandatory
           >
+            <v-chip>Extra Soft</v-chip>
+            <v-chip>Soft</v-chip>
+            <v-chip>Medium</v-chip>
+            <v-chip>Hard</v-chip>
+          </v-chip-group>
 
           <v-card-actions>
-            <v-btn text> Listen Now </v-btn>
+            <v-btn class="ml-2 mt-3" fab icon height="40px" right width="40px">
+              <v-icon>mdi-play</v-icon>
+            </v-btn>
           </v-card-actions>
-        </v-card>
-      </v-col>
+        </div>
+        <v-progress-circular
+          class="ma-3"
+          size="125"
+          width="10"
+          :value="70"
+          color="green"
+          >70%</v-progress-circular
+        >
+      </div>
+      <v-divider class="mx-4"></v-divider>
+      <v-tabs v-model="tab" align-with-title>
+        <v-tabs-slider color="yellow"></v-tabs-slider>
+        <v-tab v-for="item in items" :key="item">
+          {{ item }}
+        </v-tab>
+      </v-tabs>
 
-      <v-col v-for="(item, i) in items" :key="i" cols="12">
-        <v-card :color="item.color" dark>
-          <div class="d-flex flex-no-wrap justify-space-between">
-            <div>
-              <v-card-title class="headline" v-text="item.title"></v-card-title>
-
-              <v-card-subtitle v-text="item.artist"></v-card-subtitle>
-
-              <v-card-actions>
-                <v-btn
-                  v-if="item.artist === 'Ellie Goulding'"
-                  class="ml-2 mt-3"
-                  fab
-                  icon
-                  height="40px"
-                  right
-                  width="40px"
-                >
-                  <v-icon>mdi-play</v-icon>
-                </v-btn>
-
-                <v-btn v-else class="ml-2 mt-5" outlined rounded small>
-                  START RADIO
-                </v-btn>
-              </v-card-actions>
-            </div>
-
-            <v-avatar class="ma-3" size="125" tile>
-              <v-img :src="item.src"></v-img>
-            </v-avatar>
-          </div>
-        </v-card>
-      </v-col>
-    </v-row>
+      <v-tabs-items v-model="tab">
+        <v-tab-item v-for="item in items" :key="item">
+          <v-card flat>
+            <v-card-text>{{ item }}</v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
   </v-container>
-</template><script>
+</template>
+<script>
 export default {
   data: () => ({
-    img: require("@/assets/1.jpg"),
-    items: [
-      {
-        color: "#1F7087",
-        src: "https://cdn.vuetifyjs.com/images/cards/foster.jpg",
-        title: "Supermodel",
-        artist: "Foster the People",
-      },
-      {
-        color: "#952175",
-        src: "https://cdn.vuetifyjs.com/images/cards/halcyon.png",
-        title: "Halcyon Days",
-        artist: "Ellie Goulding",
-      },
-    ],
+    tab: null,
+    items: ["web", "shopping", "videos", "images", "news"],
   }),
 };
 </script>

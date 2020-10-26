@@ -1,92 +1,78 @@
 <template>
   <v-container>
-    <v-card class="mx-auto" flat>
-      <v-card-title>
-        <h2 class="display-1">
-          Toothbrush<v-chip color="orange" class="ma-3" dark>履行中</v-chip>
-        </h2>
-      </v-card-title>
-      <v-card-text>
-        Our company takes pride in making handmade brushes. Our toothbrushes are
-        available in 4 different bristel types, from extra soft to hard.
-      </v-card-text>
-      <div class="d-flex flex-no-wrap justify-space-between">
-        <div>
-          <v-chip-group
-            v-model="selection"
-            active-class="deep-purple--text text--accent-4"
-            mandatory
-          >
-            <v-chip>Extra Soft</v-chip>
-            <v-chip>Soft</v-chip>
-            <v-chip>Medium</v-chip>
-            <v-chip>Hard</v-chip>
-          </v-chip-group>
-
-          <v-card-actions>
-            <v-card-text>
-              <v-avatar class='ma-2'>
-                <v-img
-                  src="https://s3.amazonaws.com/uifaces/faces/twitter/canapud/128.jpg"
-                ></v-img>
-              </v-avatar>
-              <v-avatar class='ma-2'>
-                <v-img
-                  src=https://s3.amazonaws.com/uifaces/faces/twitter/jay_wilburn/128.jpg
-                ></v-img>
-              </v-avatar>
-              <v-avatar class='ma-2'>
-                <v-img
-                  src=https://s3.amazonaws.com/uifaces/faces/twitter/ciaranr/128.jpg
-                ></v-img>
-              </v-avatar>
-              <v-avatar class='ma-2'>
-                <v-img
-                  src=https://s3.amazonaws.com/uifaces/faces/twitter/markretzloff/128.jpg
-                ></v-img>
-              </v-avatar>
-            </v-card-text>
-          </v-card-actions>
-        </div>
-        <v-progress-circular
-          class="ma-3"
-          size="125"
-          width="10"
-          :value="70"
-          color="green"
-          >70%</v-progress-circular
-        >
-      </div>
-      <v-divider class="mx-4"></v-divider>
-      <v-tabs v-model="tab" align-with-title>
-        <v-tabs-slider color="yellow"></v-tabs-slider>
-        <v-tab v-for="item in items" :key="item">
-          {{ item }}
-        </v-tab>
-      </v-tabs>
-
-      <v-tabs-items v-model="tab">
-        <v-tab-item key="web">
-          <v-card flat>
-
-          </v-card>
-        </v-tab-item>
-        <v-tab-item key="videos">
-          <v-card flat>
-            <v-card-text>vvvvv</v-card-text>
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
-    </v-card>
+    <v-row align="center" justify="center">
+      <v-col cols="5">
+        <h2>Contract</h2>
+        <v-card class="pa-4" height="700" flat>
+          <v-text-field
+            hint="This field uses counter prop"
+            label="Regular"
+            outlined
+          ></v-text-field>
+        </v-card>
+      </v-col>
+      <v-divider vertical></v-divider>
+      <v-col cols="2" class="ml-8">
+        <v-card height="700" flat>
+          <h3>Members</h3>
+          <v-avatar size="40" class="ma-2">
+            <v-img
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/prheemo/128.jpg"
+            ></v-img>
+          </v-avatar>
+          <v-avatar size="40" class="ma-2">
+            <v-img
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/el_fuertisimo/128.jpg"
+            ></v-img>
+          </v-avatar>
+          <v-avatar size="40" class="ma-2">
+            <v-img
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/_dwite_/128.jpg"
+            ></v-img>
+          </v-avatar>
+          <v-divider></v-divider>
+          <h3 class="my-2">Progress</h3>
+          <p class="body">
+            dsadsahdjksahdkjsahdkjsahdkjhsadkjhsakjhfcskjhdfkjsabgkvcujsagiuywqiuehxzgvas
+          </p>
+          <v-divider></v-divider>
+          <h3 class="my-2">Progress</h3>
+          <v-chip class="ma-2">sdads</v-chip>
+          <v-chip class="ma-2">sdads</v-chip>
+          <v-chip class="ma-2">sdads</v-chip>
+          <v-divider></v-divider>
+          <h3 class="my-2">Progress</h3>
+          <v-progress-linear
+            value="70"
+            height="10"
+            class="ma-2"
+          ></v-progress-linear>
+          <v-progress-linear
+            value="70"
+            height="10"
+            color="indigo"
+            class="ma-2"
+          ></v-progress-linear>
+          <v-progress-linear
+            value="70"
+            color="teal"
+            height="10"
+            class="ma-2"
+          ></v-progress-linear>
+          <v-divider></v-divider>
+          <v-divider></v-divider>
+          <h3 class="my-2">Calendar</h3>
+          <div>
+            <v-calendar></v-calendar>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
+
 <script>
-export default {
-  data: () => ({
-    tab: null,
-    items: ["web", "shopping", "videos", "images", "news"],
-  }),
-};
+export default {};
 </script>
 
 <style>

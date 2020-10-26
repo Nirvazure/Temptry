@@ -24,9 +24,28 @@
           </v-chip-group>
 
           <v-card-actions>
-            <v-btn class="ml-2 mt-3" fab icon height="40px" right width="40px">
-              <v-icon>mdi-play</v-icon>
-            </v-btn>
+            <v-card-text>
+              <v-avatar class='ma-2'>
+                <v-img
+                  src="https://s3.amazonaws.com/uifaces/faces/twitter/canapud/128.jpg"
+                ></v-img>
+              </v-avatar>
+              <v-avatar class='ma-2'>
+                <v-img
+                  src=https://s3.amazonaws.com/uifaces/faces/twitter/jay_wilburn/128.jpg
+                ></v-img>
+              </v-avatar>
+              <v-avatar class='ma-2'>
+                <v-img
+                  src=https://s3.amazonaws.com/uifaces/faces/twitter/ciaranr/128.jpg
+                ></v-img>
+              </v-avatar>
+              <v-avatar class='ma-2'>
+                <v-img
+                  src=https://s3.amazonaws.com/uifaces/faces/twitter/markretzloff/128.jpg
+                ></v-img>
+              </v-avatar>
+            </v-card-text>
           </v-card-actions>
         </div>
         <v-progress-circular
@@ -47,9 +66,14 @@
       </v-tabs>
 
       <v-tabs-items v-model="tab">
-        <v-tab-item v-for="item in items" :key="item">
+        <v-tab-item key="web">
           <v-card flat>
-            <v-card-text>{{ item }}</v-card-text>
+
+          </v-card>
+        </v-tab-item>
+        <v-tab-item key="videos">
+          <v-card flat>
+            <v-card-text>vvvvv</v-card-text>
           </v-card>
         </v-tab-item>
       </v-tabs-items>

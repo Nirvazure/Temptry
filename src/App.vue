@@ -1,7 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="mine" dark>
-      <v-app-bar light> YQYMONs </v-app-bar>
+    <v-navigation-drawer app v-model="mine" dark clipped>
       <v-list>
         <v-list-item-group>
           <v-subheader>
@@ -48,10 +47,12 @@
       </template></v-navigation-drawer
     >
     <v-content>
-      <v-app-bar app>
+      <v-app-bar app clipped-left>
         <v-app-bar-nav-icon @click="mine = !mine"></v-app-bar-nav-icon>
-        <v-toolbar-title>Page title</v-toolbar-title>
+        <v-toolbar-title>Page title </v-toolbar-title>
+
         <v-spacer></v-spacer>
+
         <v-menu left bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn icon v-bind="attrs" v-on="on">

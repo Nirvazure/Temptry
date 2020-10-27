@@ -3,6 +3,7 @@
     <v-row align="center" justify="center">
       <v-col cols="5">
         <h2>Contract</h2>
+        <p>dsahkjdhsakdjhakjd</p>
         <v-card class="pa-4" height="700" flat>
           <v-text-field
             hint="This field uses counter prop"

@@ -1,4 +1,3 @@
-# eronichan
 
 ## Project setup
 ```

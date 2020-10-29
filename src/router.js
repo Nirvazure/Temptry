@@ -36,8 +36,13 @@ const routes = [
   }, {
     path: '/plan',
     name: 'plan',
-    // component: () => import('@/components/SW.vue')
+
     component: () => import('@/views/Plan.vue')
+  }, {
+    path: '/day',
+    name: 'day',
+
+    component: () => import('@/views/Day.vue')
   },
 
 ]
